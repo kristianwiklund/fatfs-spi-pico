@@ -1,0 +1,22 @@
+{
+  "name": "FatFs-SPI-Pico",
+  "version": "1.0.2",
+  "description": "FatFS over SPI for RP2040 (carlk3, Apache-2.0 + BSD FatFS)",
+  "license": "Apache-2.0",
+  "frameworks": ["arduino"],
+  "platforms": ["raspberrypi"],
+  "build": {
+    "srcFilter": [
+      "+<ff14a/source/*.c>",
+      "-<ff14a/source/diskio.c>",
+      "+<sd_driver/*.c>",
+      "-<sd_driver/demo_logging.c>",
+      "+<*.c>"
+    ],
+    "flags": [
+      "-Isrc/ff14a/source",
+      "-Isrc/sd_driver",
+      "-Iinclude"
+    ]
+  }
+}
